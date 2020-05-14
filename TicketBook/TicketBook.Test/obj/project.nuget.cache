@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "k12CYWZt0a3Apo1q67VTW5H0oCSlhbeEOLilUNNc2GFSTaMcz3Zs0soxLuJXpI8fTuR5mS2LX0M2k0Qtq3SrbQ==",
+  "success": true,
+  "projectFilePath": "D:\\My Personal\\My Development Application\\Github\\TicketBookingApp\\TicketBookingApp\\TicketBook\\TicketBook.Test\\TicketBook.Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TOUHID\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
