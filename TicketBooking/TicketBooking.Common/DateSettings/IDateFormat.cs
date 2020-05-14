@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicketBooking.Common.Date
+namespace TicketBooking.Common.DateSettings
 {
-    public class IDateFormat
+    public interface IDateFormat
     {
-
+        DateTime GetDate();
     }
 }
