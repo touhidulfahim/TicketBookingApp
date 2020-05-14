@@ -2,7 +2,7 @@
 Online Bus, train, launch, air ticket booking application
 
 #For Developping my architectural, design pattern(generic-repository pattern)  practic
--------------------------------------------------*******Layers are********----------------------------------
+-*******Layers are********--------
 #Common Layer
 #Core Layer
 #Domain Layer 
@@ -10,7 +10,7 @@ Online Bus, train, launch, air ticket booking application
 #Service Layer
 #Presentation Layer(web)
 #Test
--------------------------------------------------*******Layers are********----------------------------------
+--------------*******Layers are********----------------------------------
 
 ......to be continued
 
