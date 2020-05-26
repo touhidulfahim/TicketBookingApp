@@ -60,11 +60,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountryRegion\CountryRegionService.cs" />
+    <Compile Include="CountryRegion\ICountryRegionService.cs" />
+    <Compile Include="Country\CountryService.cs" />
+    <Compile Include="Country\ICountryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TicketBooking.Data\TicketBooking.Data.csproj">
+      <Project>{99fc14d8-68d6-4d6f-8ce8-e125a83083c2}</Project>
+      <Name>TicketBooking.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TicketBooking.Domain\TicketBooking.Domain.csproj">
+      <Project>{ec8e11b9-300a-4b3c-9a68-67bb10a2de67}</Project>
+      <Name>TicketBooking.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Entity\CityModel.cs" />
     <Compile Include="Entity\CountryModel.cs" />
+    <Compile Include="Entity\CountryRegionModels.cs" />
     <Compile Include="Entity\CustomerModel.cs" />
     <Compile Include="Entity\SeatModel.cs" />
     <Compile Include="Entity\SeatTypeModel.cs" />
