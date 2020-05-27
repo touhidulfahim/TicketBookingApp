@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketBooking.Common.Converter;
 using TicketBooking.Data.Infrastructure;
 using TicketBooking.Data.Repositories.Country;
+using TicketBooking.Domain.DTO;
 using TicketBooking.Domain.Entity;
 
 namespace TicketBooking.Service.Country
@@ -18,23 +20,29 @@ namespace TicketBooking.Service.Country
             this.countryRepository = countryRepository;
         }
 
-        public IEnumerable<CountryModel> GetCountryList()
+        public IEnumerable<CountryDto> GetCountryList()
         {
-            return countryRepository.GetAll();
+           List<CountryModel> country= countryRepository.GetAll().ToList();
+           List<CountryDto> countryDto = ObjectConverter<CountryModel, CountryDto>.ConvertList(country).ToList();
+           return countryDto;
         }
 
-        public CountryModel GetCountryDetails(int? id)
+        public CountryDto GetCountryDetails(int? id)
         {
-            throw new NotImplementedException();
+            CountryModel country = countryRepository.GetById(id);
+            CountryDto countryDto = ObjectConverter<CountryModel, CountryDto>.Convert(country);
+            return countryDto;
         }
 
-        public void Insert(CountryModel country)
+        public void Insert(CountryDto countryDto)
         {
+            CountryModel country=  ObjectConverter<CountryDto, CountryModel>.Convert(countryDto);
             countryRepository.Insert(country);
         }
 
-        public void Update(CountryModel country)
+        public void Update(CountryDto countryDto)
         {
+            CountryModel country = ObjectConverter<CountryDto, CountryModel>.Convert(countryDto);
             countryRepository.Update(country);
         }
 
@@ -43,7 +51,7 @@ namespace TicketBooking.Service.Country
             countryRepository.Commit();
         }
 
-        public bool IsAlreadyExists(CountryModel countryModel)
+        public bool IsAlreadyExists(CountryDto countryModel)
         {
             var countryList = countryRepository.GetAll();
             return (from c in countryList

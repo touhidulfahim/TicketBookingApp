@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TicketBooking.Domain.DTO.CountryDto>
+﻿@model IEnumerable<TicketBooking.Domain.DTO.CityDto>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            Region
+            Country
         </th>
         <th>
             Code
@@ -27,13 +27,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CountryRegions.RegionName)
+            @Html.DisplayFor(modelItem => item.Countries.CountryCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CountryCode)
+            @Html.DisplayFor(modelItem => item.CityCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CountryName)
+            @Html.DisplayFor(modelItem => item.CityName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

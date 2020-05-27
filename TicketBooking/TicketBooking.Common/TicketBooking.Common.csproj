@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\ObjectConverter.cs" />
     <Compile Include="DateSettings\DateFormat.cs" />
     <Compile Include="DateSettings\IDateFormat.cs" />
     <Compile Include="DateSettings\ITimeFormat.cs" />

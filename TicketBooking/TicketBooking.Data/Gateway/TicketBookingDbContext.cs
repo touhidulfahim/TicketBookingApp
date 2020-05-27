@@ -21,7 +21,7 @@ namespace TicketBooking.Data.Gateway
         public DbSet<CountryRegionModels> CountryRegionEntity { get; set; }
         public DbSet<CountryModel> CountryEntity { get; set; }
         public DbSet<CityModel> CityEntity { get; set; }
-        
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TicketBooking.Domain.Shared;
 
 namespace TicketBooking.Domain.Entity
 {
     [Table("tb_CountryRegionInfo")]
-    public class CountryRegionModels
+    public class CountryRegionModels: BaseEntity
     {
-        [Key]
-        public int CountryRegionId { get; set; }
+        
         public string RegionName { get; set; }
 
     }

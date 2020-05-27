@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TicketBooking.Data.Gateway;
+using TicketBooking.Domain.DTO;
 using TicketBooking.Domain.Entity;
 using TicketBooking.Service.CountryRegion;
 
@@ -32,12 +33,12 @@ namespace TicketBooking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CountryRegionModels countryRegionModels = _iCountryRegionService.GetDetailById(id);
-            if (countryRegionModels == null)
+            CountryRegionDto countryRegionDto = _iCountryRegionService.GetDetailById(id);
+            if (countryRegionDto == null)
             {
                 return HttpNotFound();
             }
-            return View(countryRegionModels);
+            return View(countryRegionDto);
         }
 
         
@@ -49,16 +50,16 @@ namespace TicketBooking.Web.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CountryRegionModels countryRegionModels)
+        public ActionResult Create(CountryRegionDto countryRegionDto)
         {
             if (ModelState.IsValid)
             {
-                _iCountryRegionService.Insert(countryRegionModels);
+                _iCountryRegionService.Insert(countryRegionDto);
                 _iCountryRegionService.SaveCountryRegion();
                 return RedirectToAction("Index");
             }
 
-            return View(countryRegionModels);
+            return View(countryRegionDto);
         }
         
         public ActionResult Edit(int id)
@@ -67,25 +68,25 @@ namespace TicketBooking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CountryRegionModels countryRegionModels = _iCountryRegionService.GetDetailById(id);
-            if (countryRegionModels == null)
+            CountryRegionDto countryRegionDto = _iCountryRegionService.GetDetailById(id);
+            if (countryRegionDto == null)
             {
                 return HttpNotFound();
             }
-            return View(countryRegionModels);
+            return View(countryRegionDto);
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CountryRegionModels countryRegionModels)
+        public ActionResult Edit(CountryRegionDto countryRegionDto)
         {
             if (ModelState.IsValid)
             {
-                _iCountryRegionService.Update(countryRegionModels);
+                _iCountryRegionService.Update(countryRegionDto);
                 _iCountryRegionService.SaveCountryRegion();
                 return RedirectToAction("Index");
             }
-            return View(countryRegionModels);
+            return View(countryRegionDto);
         }
 
        

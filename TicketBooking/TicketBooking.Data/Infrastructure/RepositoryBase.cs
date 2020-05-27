@@ -11,9 +11,6 @@ namespace TicketBooking.Data.Infrastructure
     public class RepositoryBase<T>: Disposable, IRepository<T> where T:class
     {
         private readonly TicketBookingDbContext _context;
-       
-
-        string errorMessage = string.Empty;
 
         private IDbSet<T> Dbset
         {
@@ -42,7 +39,6 @@ namespace TicketBooking.Data.Infrastructure
                 throw new ArgumentNullException("entity");
             }
             Dbset.Add(entity);
-            _context.SaveChanges();
         }
 
         public void Update(T entity)
@@ -51,7 +47,8 @@ namespace TicketBooking.Data.Infrastructure
             {
                 throw new ArgumentNullException("entity");
             }
-            _context.SaveChanges();
+            Dbset.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(T entity)
@@ -61,7 +58,6 @@ namespace TicketBooking.Data.Infrastructure
                 throw new ArgumentNullException("entity");
             }
             Dbset.Remove(entity);
-            _context.SaveChanges();
         }
         public void Remove(T entity)
         {

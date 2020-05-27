@@ -1,4 +1,4 @@
-﻿@model TicketBooking.Domain.Entity.CountryModel
+﻿@model TicketBooking.Domain.DTO.CountryDto
 
 @{
     ViewBag.Title = "Edit";
@@ -16,7 +16,7 @@
         <h4>CountryModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.CountryId)
+        @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
             @Html.LabelFor(model => model.CountryCode, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -41,7 +41,7 @@
                 @Html.ValidationMessageFor(model => model.CountryRegionId, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        s
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

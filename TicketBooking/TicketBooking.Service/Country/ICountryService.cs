@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketBooking.Domain.DTO;
 using TicketBooking.Domain.Entity;
 
 namespace TicketBooking.Service.Country
 {
     public interface ICountryService
     {
-        IEnumerable<CountryModel> GetCountryList();
-        CountryModel GetCountryDetails(int? id);
-        void Insert(CountryModel country);
-        void Update(CountryModel country);
+        IEnumerable<CountryDto> GetCountryList();
+        CountryDto GetCountryDetails(int? id);
+        void Insert(CountryDto country);
+        void Update(CountryDto country);
         void SaveCountry();
-        bool IsAlreadyExists(CountryModel countryModel);
+        bool IsAlreadyExists(CountryDto countryModel);
     }
 }

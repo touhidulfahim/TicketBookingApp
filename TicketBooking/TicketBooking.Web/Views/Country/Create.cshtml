@@ -1,4 +1,4 @@
-﻿@model TicketBooking.Domain.Entity.CountryModel
+﻿@model TicketBooking.Domain.DTO.CountryDto
 
 @{
     ViewBag.Title = "Create";
@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CountryRegionId, "CountryRegionId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model=>model.CountryRegionId, new SelectList(ViewBag.RegionList, "CountryRegionId", "RegionName"),"Select", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model=>model.CountryRegionId, new SelectList(ViewBag.RegionList, "Id", "RegionName"),"Select", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CountryRegionId, "", new { @class = "text-danger" })
             </div>
         </div>

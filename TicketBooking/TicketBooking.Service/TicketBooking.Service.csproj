@@ -60,10 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="City\CityService.cs" />
+    <Compile Include="City\ICityService.cs" />
     <Compile Include="CountryRegion\CountryRegionService.cs" />
     <Compile Include="CountryRegion\ICountryRegionService.cs" />
     <Compile Include="Country\CountryService.cs" />
     <Compile Include="Country\ICountryService.cs" />
+    <Compile Include="Mapper\ModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TicketBooking.Common\TicketBooking.Common.csproj">
+      <Project>{a76d1134-31fe-4398-87cb-678be15834fb}</Project>
+      <Name>TicketBooking.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TicketBooking.Data\TicketBooking.Data.csproj">
       <Project>{99fc14d8-68d6-4d6f-8ce8-e125a83083c2}</Project>
       <Name>TicketBooking.Data</Name>
