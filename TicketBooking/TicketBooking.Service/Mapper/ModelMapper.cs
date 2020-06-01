@@ -17,9 +17,17 @@ namespace TicketBooking.Service.Mapper
                 cfg.CreateMap<CountryRegionModels, CountryRegionDto>();
                 cfg.CreateMap<CountryModel, CountryDto>();
                 cfg.CreateMap<CityModel, CityDto>();
+                cfg.CreateMap<SeatTypeModel, SeatTypeDto>();
+                cfg.CreateMap<SeatModel, SeatDto>();
+
+
+
+                //=========
                 cfg.CreateMap<CountryRegionDto, CountryRegionModels>();
                 cfg.CreateMap<CountryDto, CountryModel>();
                 cfg.CreateMap<CityDto, CityModel>();
+                cfg.CreateMap<SeatTypeDto, SeatTypeModel>();
+                cfg.CreateMap<SeatDto, SeatModel>();
             });
         }
     }

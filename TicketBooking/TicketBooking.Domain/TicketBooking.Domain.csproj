@@ -63,6 +63,8 @@
     <Compile Include="DTO\CityDto.cs" />
     <Compile Include="DTO\CountryDto.cs" />
     <Compile Include="DTO\CountryRegionDto.cs" />
+    <Compile Include="DTO\SeatDto.cs" />
+    <Compile Include="DTO\SeatTypeDto.cs" />
     <Compile Include="Entity\CityModel.cs" />
     <Compile Include="Entity\CountryModel.cs" />
     <Compile Include="Entity\CountryRegionModels.cs" />

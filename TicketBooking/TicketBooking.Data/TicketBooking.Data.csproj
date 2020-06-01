@@ -76,6 +76,14 @@
     <Compile Include="Migrations\202005262040322_ModifiedDomainClassDesign.Designer.cs">
       <DependentUpon>202005262040322_ModifiedDomainClassDesign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005271410218_AddSeatModels.cs" />
+    <Compile Include="Migrations\202005271410218_AddSeatModels.Designer.cs">
+      <DependentUpon>202005271410218_AddSeatModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005271539224_AddSeatTypeKeyInSeatModels.cs" />
+    <Compile Include="Migrations\202005271539224_AddSeatTypeKeyInSeatModels.Designer.cs">
+      <DependentUpon>202005271539224_AddSeatTypeKeyInSeatModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\City\CityRepository.cs" />
@@ -84,6 +92,10 @@
     <Compile Include="Repositories\CountryRegion\ICountryRegionRepository.cs" />
     <Compile Include="Repositories\Country\CountryRepository.cs" />
     <Compile Include="Repositories\Country\ICountryRepository.cs" />
+    <Compile Include="Repositories\SeatType\ISeatTypeRepository.cs" />
+    <Compile Include="Repositories\SeatType\SeatTypeRepository.cs" />
+    <Compile Include="Repositories\Seat\ISeatRepository.cs" />
+    <Compile Include="Repositories\Seat\SeatRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -104,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005262040322_ModifiedDomainClassDesign.resx">
       <DependentUpon>202005262040322_ModifiedDomainClassDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005271410218_AddSeatModels.resx">
+      <DependentUpon>202005271410218_AddSeatModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005271539224_AddSeatTypeKeyInSeatModels.resx">
+      <DependentUpon>202005271539224_AddSeatTypeKeyInSeatModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -1,45 +1,434 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title | Ticket Booking App</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet">
+    <script src=""></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="container" class="effect mainnav-lg navbar-fixed mainnav-fixed">
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            @Html.Partial("_TopBar")
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+        <div class="boxed">
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="profilebody">
+                    <div class="pad-all animated fadeInDown">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">Users</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-users fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">Inbox</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-envelope fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">FAQ</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-headphones fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">Settings</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-cogs fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">Calender</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-calendar fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-md-6 col-xs-12">
+                                <div class="panel panel-default mar-no">
+                                    <div class="panel-body">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="pull-left"> <p class="profile-title text-bricky">Pictures</p> </div>
+                                            <div class="pull-right text-bricky"> <i class="fa fa-picture-o fa-4x"></i> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div class="pageheader">
+                    <h3><i class="fa fa-home"></i> Dashboard </h3>
+                    <div class="breadcrumb-wrapper">
+                        <span class="label">You are here:</span>
+                        <ol class="breadcrumb">
+                            <li> <a href="#"> Home </a> </li>
+                            <li class="active"> Dashboard </li>
+                        </ol>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    @RenderBody()
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Region", "Index", "CountryRegion")</li>
-                    <li>@Html.ActionLink("Country", "Index", "Country")</li>
-                    <li>@Html.ActionLink("City", "Index", "City")</li>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+                    <!--Menu-->
+                    <!--================================-->
+                    @Html.Partial("_Sidebar");
+                    <!--================================-->
+                    <!--End menu-->
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active">
+                                    <a href="#demo-asd-tab-1" data-toggle="tab"> <i class="fa fa-comments"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-3" data-toggle="tab"> <i class="fa fa-wrench"></i> </a>
+                                </li>
+                            </ul>
+                            <!--================================-->
+                            <!--End nav tabs-->
+                            <!-- Tabs Content Start-->
+                            <!--================================-->
+                            <div class="tab-content">
+                                <!--First tab (Contact list)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade in active" id="demo-asd-tab-1">
+                                    <h4 class="pad-hor text-thin"> Online Members (7) </h4>
+                                    <div class="list-group bg-trans">
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av1.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">John Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av2.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block pad-ver-5">
+                                                <div class="text-small">Jose Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av3.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Roy Banks</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av7.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Steven Jordan</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av4.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Scott Owens</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av5.png" alt="" class="img-sm">
+                                                <i class="on bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Melissa Hunt</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h4 class="pad-hor text-thin"> Busy Members (4) </h4>
+                                    <div class="list-group bg-trans">
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av1.png" alt="" class="img-sm">
+                                                <i class="busy bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">John Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av2.png" alt="" class="img-sm">
+                                                <i class="busy bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Jose Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av3.png" alt="" class="img-sm">
+                                                <i class="busy bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Roy Banks</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av7.png" alt="" class="img-sm">
+                                                <i class="busy bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Steven Jordan</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h4 class="pad-hor text-thin"> Offline Members (4) </h4>
+                                    <div class="list-group bg-trans">
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av1.png" alt="" class="img-sm">
+                                                <i class="off bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block pad-ver-5">
+                                                <div class="text-small">John Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av2.png" alt="" class="img-sm">
+                                                <i class="off bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block pad-ver-5">
+                                                <div class="text-small">Jose Knight</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av3.png" alt="" class="img-sm">
+                                                <i class="off bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block pad-ver-5">
+                                                <div class="text-small">Roy Banks</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="pull-left avatar mar-rgt">
+                                                <img src="~/Content/ticketbookingapp/img/av7.png" alt="" class="img-sm">
+                                                <i class="off bottom text-light"></i>
+                                            </div>
+                                            <div class="inline-block">
+                                                <div class="text-small">Steven Jordan</div>
+                                                <small class="text-mute">Available</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End first tab (Contact list)-->
+                                <!--Second tab (Settings)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade" id="demo-asd-tab-3">
+                                    <ul class="list-group bg-trans">
+                                        <li class="list-header">
+                                            <h4 class="text-thin">Account Settings</h4>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox" checked>
+                                            </div>
+                                            <p>Show my personal status</p>
+                                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox" checked>
+                                            </div>
+                                            <p>Show offline contact</p>
+                                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox">
+                                            </div>
+                                            <p>Invisible mode </p>
+                                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    <ul class="list-group bg-trans">
+                                        <li class="list-header">
+                                            <h4 class="text-thin">Public Settings</h4>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox" checked>
+                                            </div>
+                                            Online status
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox">
+                                            </div>
+                                            Show offline contact
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="demo-switch" type="checkbox" checked>
+                                            </div>
+                                            Show my device icon
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    <h4 class="pad-hor text-thin">Task Progress</h4>
+                                    <div class="pad-all">
+                                        <p>Upgrade Progress</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 15%;"><span class="sr-only">15%</span></div>
+                                        </div>
+                                        <small class="text-muted">15% Completed</small>
+                                    </div>
+                                    <div class="pad-hor">
+                                        <p>Database</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-danger" style="width: 75%;"><span class="sr-only">75%</span></div>
+                                        </div>
+                                        <small class="text-muted">17/23 Database</small>
+                                    </div>
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--Second tab (Settings)-->
+                            </div>
+                            <!-- Tabs Content End -->
+                            <!--================================-->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
+        </div>
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                <ul class="footer-list list-inline">
+                    <li>
+                        <p class="text-sm">SEO Proggres</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="text-sm">Online Tutorial</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">Currently v2.2</div>
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <p class="pad-lft">&#0169; 2015 Your Company</p>
         </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
     </div>
-
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

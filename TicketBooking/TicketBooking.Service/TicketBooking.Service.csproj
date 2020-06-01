@@ -68,6 +68,10 @@
     <Compile Include="Country\ICountryService.cs" />
     <Compile Include="Mapper\ModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeatType\ISeatTypeService.cs" />
+    <Compile Include="SeatType\SeatTypeService.cs" />
+    <Compile Include="Seat\ISeatService.cs" />
+    <Compile Include="Seat\SeatService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
