@@ -23,12 +23,16 @@ namespace TicketBooking.Web.Controllers
         }
         public ActionResult Index()
         {
+            ViewBag.Module = "Seat Type";
+            ViewBag.Page = "Index";
             return View(_iSeatTypeService.GetSeatTypeList());
         }
 
         
         public ActionResult Details(int? id)
         {
+            ViewBag.Module = "Seat Type";
+            ViewBag.Page = "Details";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,6 +47,8 @@ namespace TicketBooking.Web.Controllers
         
         public ActionResult Create()
         {
+            ViewBag.Module = "Seat Type";
+            ViewBag.Page = "Create";
             return View();
         }
         
@@ -65,6 +71,8 @@ namespace TicketBooking.Web.Controllers
 
         public ActionResult Edit(int? id)
         {
+            ViewBag.Module = "Seat Type";
+            ViewBag.Page = "Edit";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

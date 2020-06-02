@@ -28,6 +28,8 @@ namespace TicketBooking.Web.Controllers
         // GET: Country
         public ActionResult Index()
         {
+            ViewBag.Module = "Country";
+            ViewBag.Page = "Index";
             var countryList = _iCountryService.GetCountryList();
             return View(countryList.ToList());
         }
@@ -35,6 +37,8 @@ namespace TicketBooking.Web.Controllers
         // GET: Country/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Module = "Country";
+            ViewBag.Page = "Details";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -50,6 +54,8 @@ namespace TicketBooking.Web.Controllers
         // GET: Country/Create
         public ActionResult Create()
         {
+            ViewBag.Module = "Country";
+            ViewBag.Page = "Create";
             ViewBag.RegionList = _iCountryRegionService.GetAllCountryRegion();
             return View();
         }
@@ -75,6 +81,8 @@ namespace TicketBooking.Web.Controllers
 
         public ActionResult Edit(int? id)
         {
+            ViewBag.Module = "Country";
+            ViewBag.Page = "Edit";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

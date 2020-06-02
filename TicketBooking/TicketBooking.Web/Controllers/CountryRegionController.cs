@@ -24,11 +24,15 @@ namespace TicketBooking.Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Module = "Region";
+            ViewBag.Page = "Index";
             return View(_iCountryRegionService.GetAllCountryRegion());
         }
 
         public ActionResult Details(int id)
         {
+            ViewBag.Module = "Region";
+            ViewBag.Page = "Detail";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -44,6 +48,8 @@ namespace TicketBooking.Web.Controllers
         
         public ActionResult Create()
         {
+            ViewBag.Module = "Region";
+            ViewBag.Page = "Create";
             return View();
         }
 
@@ -64,6 +70,8 @@ namespace TicketBooking.Web.Controllers
         
         public ActionResult Edit(int id)
         {
+            ViewBag.Module = "Region";
+            ViewBag.Page = "Edit";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

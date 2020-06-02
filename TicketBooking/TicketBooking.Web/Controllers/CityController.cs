@@ -30,12 +30,16 @@ namespace TicketBooking.Web.Controllers
         // GET: City
         public ActionResult Index()
         {
+            ViewBag.Module = "City";
+            ViewBag.Page = "Index";
             return View(_iCityService.GetCityList());
         }
 
         // GET: City/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Module = "City";
+            ViewBag.Page = "Detail";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -51,6 +55,8 @@ namespace TicketBooking.Web.Controllers
         // GET: City/Create
         public ActionResult Create()
         {
+            ViewBag.Module = "City";
+            ViewBag.Page = "Create";
             ViewBag.CountryList = _iCountryService.GetCountryList();
             return View();
         }
@@ -77,6 +83,8 @@ namespace TicketBooking.Web.Controllers
         // GET: City/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.Module = "City";
+            ViewBag.Page = "Edit";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

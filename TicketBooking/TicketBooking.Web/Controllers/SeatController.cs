@@ -27,11 +27,15 @@ namespace TicketBooking.Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Module = "Seat";
+            ViewBag.Page = "Index";
             return View(_iSeatService.GetSeatList());
         }
 
         public ActionResult Details(int? id)
         {
+            ViewBag.Module = "Seat";
+            ViewBag.Page = "Details";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,6 +50,8 @@ namespace TicketBooking.Web.Controllers
         
         public ActionResult Create()
         {
+            ViewBag.Module = "Seat";
+            ViewBag.Page = "Create";
             ViewBag.SeatTypeList = _iSeatTypeService.GetSeatTypeList();
             return View();
         }
@@ -55,6 +61,7 @@ namespace TicketBooking.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(SeatDto seatDto)
         {
+            
             if (ModelState.IsValid)
             {
                 if (!_iSeatService.IsSeatAlreadyExists(seatDto))
@@ -70,6 +77,8 @@ namespace TicketBooking.Web.Controllers
 
         public ActionResult Edit(int? id)
         {
+            ViewBag.Module = "Seat";
+            ViewBag.Page = "Edit";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
